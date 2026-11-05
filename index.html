@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brigid Chepkemoi | Software Developer</title>
+<meta name="description" content="Brigid Chepkemoi is a software developer and IT student at Kisii University, building reliable, user-focused web systems.">
+<meta name="author" content="Brigid Chepkemoi">
+<!-- REPLACE: your live site URL and a preview image for social sharing -->
+<meta property="og:title" content="Brigid Chepkemoi | Software Developer">
+<meta property="og:description" content="Clean, reliable web systems built with Python, JavaScript, HTML and CSS.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/preview.png">
+<!-- REPLACE: favicon file (put favicon.png beside this file) -->
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== THEME: change colors here ===== */
+:root{
+  --bg:#0b1020; --surface:rgba(255,255,255,.05); --border:rgba(255,255,255,.12);
+  --text:#e9ecf5; --muted:#a3abc2; --accent:#6366f1; --accent2:#22d3ee;
+  --radius:16px; --head:'Space Grotesk',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+:root[data-theme="light"]{
+  --bg:#f5f7fc; --surface:rgba(255,255,255,.8); --border:rgba(11,16,32,.12);
+  --text:#121830; --muted:#4b5470; --accent:#4f46e5; --accent2:#0891b2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;
+  background-image:radial-gradient(800px 500px at 85% -5%,rgba(99,102,241,.25),transparent),
+  radial-gradient(700px 500px at 0% 40%,rgba(34,211,238,.10),transparent);background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent2);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+h1,h2,h3{font-family:var(--head);line-height:1.15}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:10px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:34px}
+.glass{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:24px;transition:transform .25s,border-color .25s}
+.glass:hover{transform:translateY(-4px);border-color:var(--accent)}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;
+  border:1px solid var(--border);transition:transform .2s,box-shadow .2s;cursor:pointer;background:none;color:var(--text);font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:0;color:#fff;box-shadow:0 8px 24px rgba(99,102,241,.35)}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+:root[data-theme="light"] header{background:rgba(245,247,252,.8)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--head);font-weight:700;font-size:1.15rem}
+.logo span{color:var(--accent2)}
+.links{display:flex;gap:6px;align-items:center;list-style:none}
+.links a{padding:8px 12px;border-radius:8px;color:var(--muted);font-size:.93rem}
+.links a:hover,.links a.active{color:var(--text);background:var(--surface)}
+.icon-btn{background:none;border:1px solid var(--border);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem}
+.burger{display:none}
+/* hero */
+#home{padding:110px 0 70px}
+.hello{color:var(--accent2);font-weight:600;margin-bottom:12px}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);letter-spacing:-.02em;margin-bottom:14px}
+.role{font-family:var(--head);font-size:clamp(1.2rem,3vw,1.7rem);color:var(--muted);min-height:2.2rem;margin-bottom:18px}
+.role b{color:var(--accent2);font-weight:500}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent2);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tag{max-width:56ch;color:var(--muted);margin-bottom:28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-in>*{animation:rise .7s both}
+.hero-in>*:nth-child(2){animation-delay:.08s}.hero-in>*:nth-child(3){animation-delay:.16s}
+.hero-in>*:nth-child(4){animation-delay:.24s}.hero-in>*:nth-child(5){animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:start}
+.about p+p{margin-top:14px}.about p{color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{text-align:center;padding:18px}
+.stat strong{display:block;font-family:var(--head);font-size:2rem;color:var(--accent2)}
+.stat span{color:var(--muted);font-size:.85rem}
+/* grids */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.skill{margin-top:14px;font-size:.9rem}
+.skill div{display:flex;justify-content:space-between}
+.bar{height:6px;border-radius:9px;background:var(--border);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s ease}
+.pill{display:inline-block;font-size:.78rem;padding:3px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted);margin:10px 6px 0 0}
+.proj p,.svc p{color:var(--muted);font-size:.93rem;margin-top:8px}
+.proj .row{display:flex;gap:10px;margin-top:16px}
+.proj .btn{padding:7px 16px;font-size:.85rem}
+/* timeline */
+.tl{border-left:2px solid var(--border);margin-left:8px;padding-left:26px}
+.tl article{position:relative;margin-bottom:26px}
+.tl article::before{content:"";position:absolute;left:-35px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl time{color:var(--accent2);font-size:.85rem;font-weight:600}
+.tl p{color:var(--muted);font-size:.93rem}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.cl a{display:block;padding:12px 0;border-bottom:1px solid var(--border);color:var(--muted)}
+.cl a:hover{color:var(--accent2)}.cl b{color:var(--text);display:block;font-size:.85rem}
+form label{display:block;font-size:.88rem;margin-top:14px}
+input,textarea{width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit}
+.err{color:#fb7185;font-size:.8rem;min-height:1em}
+#msg{margin-top:12px;font-size:.9rem;color:var(--accent2)}
+footer{border-top:1px solid var(--border);padding:26px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:780px){
+  .about,.contact{grid-template-columns:1fr}
+  .burger{display:inline-block}
+  .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;padding:12px 22px;background:var(--bg);border-bottom:1px solid var(--border)}
+  .links.open{display:flex}
+  section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a href="#home" class="logo">brigid<span>.dev</span></a>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li><li><a href="#journey">Journey</a></li>
+      <li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+    <div>
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark mode">☾</button>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section id="home">
+  <div class="wrap hero-in">
+    <p class="hello">Hello, I'm</p>
+    <h1>Brigid Chepkemoi</h1>
+    <p class="role"><b id="typed"></b><span class="cursor"></span></p>
+    <p class="tag">I design and build reliable, user-focused software. From attendance systems to student portals, I turn real problems into clean, maintainable code.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="#contact">Contact me</a>
+      <!-- REPLACE: put your CV file (e.g. Brigid-Chepkemoi-CV.pdf) beside index.html and update the link -->
+      <a class="btn" href="Brigid-Chepkemoi-CV.pdf" download>Download CV</a>
+    </div>
+  </div>
+</section>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <p class="lead">Software developer, 22, from Sotik, Bomet County, Kenya.</p>
+  <div class="about reveal">
+    <div>
+      <p>I grew up in Sotik, Bomet County, and now study Information Technology at Kisii University. That path taught me to learn fast, work with limited resources, and build things that people actually use.</p>
+      <p>I focus on clean architecture, readable code, performance and accessibility. I ship small, test often, and keep learning across Python, JavaScript and the modern web. I'm looking for internships and junior roles, and I take on freelance web projects.</p>
+    </div>
+    <div class="stats">
+      <!-- REPLACE: update these numbers as you build more -->
+      <div class="glass stat"><strong>6+</strong><span>Projects built</span></div>
+      <div class="glass stat"><strong>5+</strong><span>Technologies</span></div>
+      <div class="glass stat"><strong>2+</strong><span>Years learning</span></div>
+      <div class="glass stat"><strong>100%</strong><span>Committed</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="lead">The tools I use to design, build and ship.</p>
+  <div class="grid">
+    <div class="glass reveal"><h3>Frontend</h3>
+      <div class="skill"><div><span>HTML & CSS</span><span>90%</span></div><div class="bar"><i data-w="90"></i></div></div>
+      <div class="skill"><div><span>JavaScript</span><span>80%</span></div><div class="bar"><i data-w="80"></i></div></div>
+      <div class="skill"><div><span>Responsive design</span><span>85%</span></div><div class="bar"><i data-w="85"></i></div></div></div>
+    <div class="glass reveal"><h3>Backend & Databases</h3>
+      <div class="skill"><div><span>Python</span><span>80%</span></div><div class="bar"><i data-w="80"></i></div></div>
+      <div class="skill"><div><span>SQL & cloud databases</span><span>70%</span></div><div class="bar"><i data-w="70"></i></div></div>
+      <div class="skill"><div><span>REST APIs</span><span>65%</span></div><div class="bar"><i data-w="65"></i></div></div></div>
+    <div class="glass reveal"><h3>Tools</h3>
+      <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">VS Code</span>
+      <span class="pill">GitHub Pages</span><span class="pill">Linux basics</span><span class="pill">Figma basics</span>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:16px">Version control, deployment and a disciplined workflow keep my projects maintainable.</p></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="lead">Practical systems I designed, built and deployed.</p>
+  <div class="grid">
+    <!-- REPLACE: set each Live Demo and GitHub link below -->
+    <article class="glass proj reveal"><h3>Smart Attendance System</h3><p>Cloud-backed attendance for a 7-unit class, with admin approval and secure login.</p>
+      <span class="pill">Python</span><span class="pill">Cloud DB</span><span class="pill">JavaScript</span>
+      <div class="row"><a class="btn primary" href="#">Live demo</a><a class="btn" href="#">GitHub</a></div></article>
+    <article class="glass proj reveal"><h3>Student Portal</h3><p>Login and dashboard modelled on a real university portal, built for clarity and speed.</p>
+      <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span>
+      <div class="row"><a class="btn primary" href="#">Live demo</a><a class="btn" href="#">GitHub</a></div></article>
+    <article class="glass proj reveal"><h3>Scientific Calculator</h3><p>A fast, keyboard-friendly calculator with scientific functions and a clean interface.</p>
+      <span class="pill">JavaScript</span><span class="pill">CSS</span>
+      <div class="row"><a class="btn primary" href="#">Live demo</a><a class="btn" href="#">GitHub</a></div></article>
+    <article class="glass proj reveal"><h3>Python Chatbot</h3><p>A rule-based conversational assistant that answers common questions on demand.</p>
+      <span class="pill">Python</span><span class="pill">NLP basics</span>
+      <div class="row"><a class="btn primary" href="#">Live demo</a><a class="btn" href="#">GitHub</a></div></article>
+    <article class="glass proj reveal"><h3>Study Quiz Generator</h3><p>Turns revision notes into quizzes and flashcards to make studying active.</p>
+      <span class="pill">JavaScript</span><span class="pill">UX</span>
+      <div class="row"><a class="btn primary" href="#">Live demo</a><a class="btn" href="#">GitHub</a></div></article>
+    <article class="glass proj reveal"><h3>Client Business Website</h3><p>A responsive, SEO-ready website that helps a local business get found and contacted.</p>
+      <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">SEO</span>
+      <div class="row"><a class="btn primary" href="#">Live demo</a><a class="btn" href="#">GitHub</a></div></article>
+  </div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <h2>Experience & education</h2>
+  <p class="lead">Where I've learned and what I've built along the way.</p>
+  <div class="tl reveal">
+    <article><time>Present</time><h3>BSc Information Technology, Kisii University</h3><p>Studying software systems, databases and networks while building real projects alongside coursework.</p></article>
+    <article><time>Ongoing</time><h3>Self-directed software projects</h3><p>Designed and deployed attendance, portal and productivity tools using Python and JavaScript, hosted on GitHub.</p></article>
+    <article><time>Ongoing</time><h3>Freelance web designer</h3><p>Build responsive websites for small businesses, from first sketch to launch.</p></article>
+    <article><time>2019 – 2022</time><h3>Morit Secondary School</h3><p>Completed secondary education, building the discipline and curiosity that led me into technology.</p></article>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <h2>Services</h2>
+  <p class="lead">How I can help your business or team.</p>
+  <div class="grid">
+    <div class="glass svc reveal"><h3>Web design & development</h3><p>Fast, modern websites that look sharp on every device and are easy to find on Google.</p></div>
+    <div class="glass svc reveal"><h3>System development</h3><p>Custom tools such as attendance, registration and management systems with secure login.</p></div>
+    <div class="glass svc reveal"><h3>Responsive UI</h3><p>Clear, accessible interfaces designed mobile-first, so every user has a smooth experience.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Let's work together</h2>
+  <p class="lead">Have a role, project or idea? Send a message and I'll reply quickly.</p>
+  <div class="contact">
+    <div class="glass cl reveal">
+      <a href="https://wa.me/254799474782"><b>WhatsApp</b>0799 474 782</a>
+      <a href="tel:+254799474782"><b>Call</b>0799 474 782</a>
+      <a href="mailto:akipkirui2024@gmail.com"><b>Email</b>akipkirui2024@gmail.com</a>
+      <!-- REPLACE: your GitHub and LinkedIn profile links -->
+      <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener"><b>GitHub</b>github.com/YOUR-USERNAME</a>
+      <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener"><b>LinkedIn</b>linkedin.com/in/YOUR-PROFILE</a>
+    </div>
+    <form class="glass reveal" id="form" novalidate>
+      <label for="n">Name</label><input id="n" name="name" autocomplete="name"><div class="err" data-for="n"></div>
+      <label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"><div class="err" data-for="e"></div>
+      <label for="m">Message</label><textarea id="m" name="message" rows="5"></textarea><div class="err" data-for="m"></div>
+      <button class="btn primary" type="submit" style="margin-top:16px">Send message</button>
+      <p id="msg" role="status"></p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="yr"></span> Brigid Chepkemoi. Built with care in Sotik, Kenya.</span>
+  <a class="btn" href="#home" style="padding:7px 16px">Back to top</a>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return Array.from((c||document).querySelectorAll(s))};
+  $('#yr').textContent=new Date().getFullYear();
+
+  // Theme toggle (remembered when storage is available)
+  var root=document.documentElement,tb=$('#theme');
+  function setTheme(t){root.dataset.theme=t;tb.textContent=t==='light'?'☀':'☾';try{localStorage.setItem('theme',t)}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+  setTheme(saved||'dark');
+  tb.onclick=function(){setTheme(root.dataset.theme==='light'?'dark':'light')};
+
+  // Mobile menu
+  var burger=$('#burger'),links=$('#links');
+  burger.onclick=function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+  links.onclick=function(){links.classList.remove('open')};
+
+  // Typing effect
+  var words=['Software Developer','Problem Solver','Web Builder'],wi=0,ci=0,del=false,t=$('#typed');
+  (function tick(){
+    var w=words[wi];ci+=del?-1:1;t.textContent=w.slice(0,ci);
+    var d=del?45:90;
+    if(!del&&ci===w.length){del=true;d=1400}
+    else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=300}
+    setTimeout(tick,d);
+  })();
+
+  // Scroll reveal + skill bars
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');
+      $$('.bar i',e.target).forEach(function(b){b.style.width=b.dataset.w+'%'});io.unobserve(e.target)}})},{threshold:.15});
+  $$('.reveal').forEach(function(el){io.observe(el)});
+
+  // Active nav link
+  var secs=$$('main section'),nav=$$('.links a');
+  addEventListener('scroll',function(){
+    var y=scrollY+120,cur='';
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    nav.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+  },{passive:true});
+
+  // Contact form: validate, then open the visitor's email app
+  $('#form').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var n=$('#n').value.trim(),e=$('#e').value.trim(),m=$('#m').value.trim(),ok=true;
+    function bad(id,txt){$('[data-for="'+id+'"]').textContent=txt;ok=false}
+    $$('.err').forEach(function(x){x.textContent=''});
+    if(n.length<2)bad('n','Enter your name.');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))bad('e','Enter a valid email address.');
+    if(m.length<10)bad('m','Write at least 10 characters.');
+    if(!ok)return;
+    var sub=encodeURIComponent('Portfolio enquiry from '+n),body=encodeURIComponent(m+'\n\nFrom: '+n+' ('+e+')');
+    location.href='mailto:akipkirui2024@gmail.com?subject='+sub+'&body='+body;
+    $('#msg').textContent='Thanks, '+n+'. Your email app is opening so you can send the message.';
+  });
+})();
+</script>
+</body>
+</html>
